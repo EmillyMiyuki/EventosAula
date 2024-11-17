@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CadastroEventos.MainPage"
+             xmlns:local="clr-namespace:CadastroEventos.models"  
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+
+    <ContentPage.BindingContext>
+        <local:Evento />
+    </ContentPage.BindingContext>
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <Label Text="Cadastro de Evento" FontSize="24" HorizontalOptions="Center" />
+
+            <Entry Text="{Binding Nome}" Placeholder="Nome do Evento" />
+            <DatePicker Date="{Binding DataInicio}" />
+            <DatePicker Date="{Binding DataTermino}" />
+            <Entry Keyboard="Numeric" Text="{Binding NumeroParticipantes}" Placeholder="Número de Participantes" />
+            <Entry Keyboard="Numeric" Text="{Binding CustoPorParticipante}" Placeholder="Custo por Participante" />
+            <Entry IsReadOnly="True" Text="{Binding DuracaoEventoEmDias}" Placeholder="Duração do Evento (dias)" />
+            <Button Text="Cadastrar Evento" Clicked="OnCadastrarEventoClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CadastroEventos.Models"
+             xmlns:local="clr-namespace:CadastroEventos"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <local:Evento />
+    </ContentPage.BindingContext>
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <Label Text="Cadastro de Evento" FontSize="24" HorizontalOptions="Center" />
+
+            <Entry Text="{Binding Nome}" Placeholder="Nome do Evento" />
+            <DatePicker Date="{Binding DataInicio}" />
+            <DatePicker Date="{Binding DataTermino}" />
+            <Entry Keyboard="Numeric" Text="{Binding NumeroParticipantes}" Placeholder="Número de Participantes" />
+            <Entry Keyboard="Numeric" Text="{Binding CustoPorParticipante}" Placeholder="Custo por Participante" />
+            <Entry IsReadOnly="True" Text="{Binding DuracaoEventoEmDias}" Placeholder="Duração do Evento (dias)" />
+            
+            <!-- Botão para cadastrar evento -->
+            <Button Text="Cadastrar Evento" Clicked="OnCadastrarEventoClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+
